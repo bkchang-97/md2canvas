@@ -25,7 +25,8 @@ def update_media(url, folder, media):
     bn = ntpath.basename(media)
 
     for f in folder.get_files():
-        if bn in f.name:
+        #breakpoint()
+        if bn in f.filename:
             return url + "/files/" + str(f.id) + "/download?wrap=1"
 
     return media + "(failed to load)"
